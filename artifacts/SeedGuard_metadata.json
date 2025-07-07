@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "mens",
+						"type": "string"
+					}
+				],
+				"name": "guardarMensagem",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "sucesso",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lerMensagem",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"AulaRecife/SeedGuard.sol": "SeedGuard"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"AulaRecife/SeedGuard.sol": {
+			"keccak256": "0xf194ac8c80c66b50038367ad70a097a6b15d0d09111002ee58068cef07fe03bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8cebc947557333d48ebcb23af477fc4a7a337203398298dfcb45dbf76cc098fb",
+				"dweb:/ipfs/QmbpEaAJQgD4TSpv6eWkzDwMAYnt2YEn5Aqmf1ixrKbQVL"
+			]
+		}
+	},
+	"version": 1
+}
