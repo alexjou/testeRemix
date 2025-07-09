@@ -249,7 +249,14 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"constructor": {
+					"details": "Constructor that sets the maximum bank limit",
+					"params": {
+						"_bankCap": "The maximum bank limit in wei IMPORTANT: For 1 complete ETH, use 1000000000000000000 (1 followed by 18 zeros) Example: To set 5 ETH as the limit: 5000000000000000000"
+					}
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -260,7 +267,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"AulaRecife/KipuBnak.sol": "KipuBank"
+			"AulaRecife/KipuBank.sol": "KipuBank"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -274,12 +281,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"AulaRecife/KipuBnak.sol": {
-			"keccak256": "0xb4745dd51787727c46c5e2c9c7de210446848893de5a44a0292b879505f570aa",
+		"AulaRecife/KipuBank.sol": {
+			"keccak256": "0xa3cb5def4c68055ec1340e4e51c865367d32ffbd0991355bbaa601fa2dcc7e22",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://955631bf39b33eff4e911e6d424ba97a65cc2b4d71e7b062e2dd557479ecfa3f",
-				"dweb:/ipfs/QmYRGofkU7FmwBNTiNKBgS3cFej16gkXqLPRQRLhLgDSyN"
+				"bzz-raw://213dd50c9a2ab56e79d862756030355bbefb3f8599af26a91ed1fcfea86c198e",
+				"dweb:/ipfs/QmdJBvFaPZt5KNfFWDxiPebnkViWbYQqjzZUqhYKYbwVXa"
 			]
 		}
 	},

@@ -13,53 +13,59 @@ contract KipuBank {
     event FailedDeposit(address indexed user, uint256 amount, string reason);
     event FailedWithdrawal(address indexed user, uint256 amount, string reason);
     
+    /**
+     * @dev Constructor that sets the maximum bank limit
+     * @param _bankCap The maximum bank limit in wei
+     * IMPORTANT: For 1 complete ETH, use 1000000000000000000 (1 followed by 18 zeros)
+     * Example: To set 5 ETH as the limit: 5000000000000000000
+     */
     constructor(uint256 _bankCap) {
         owner = msg.sender;
         bankCap = _bankCap;
     }
     
     modifier onlyOwner() {
-        require(msg.sender == owner, "Apenas o dono pode executar esta acao");
+        require(msg.sender == owner, "Only the owner can execute this action");
         _;
     }
     
     function deposit() external payable {
-        // Verificar se o valor é maior que zero
-        require(msg.value > 0, "O valor depositado deve ser maior que zero");
+        // Check if the value is greater than zero
+        require(msg.value > 0, "The deposited value must be greater than zero");
         
-        // Verificar se o depósito excede o limite do banco
+        // Check if the deposit exceeds the bank's limit
         if (totalDeposits + msg.value > bankCap) {
-            emit FailedDeposit(msg.sender, msg.value, "Deposito excede o limite do banco");
-            revert("Deposito excede o limite do banco");
+            emit FailedDeposit(msg.sender, msg.value, "Deposit exceeds the bank's limit");
+            revert("Deposit exceeds the bank's limit");
         }
         
-        // Atualizar saldo do usuário e total do banco
+        // Update user balance and bank total
         userBalances[msg.sender] += msg.value;
         totalDeposits += msg.value;
         
-        // Emitir evento de depósito bem-sucedido
+        // Emit successful deposit event
         emit Deposit(msg.sender, msg.value, userBalances[msg.sender]);
     }
     
     function withdraw(uint256 amount) external {
-        // Verificar se o valor é maior que zero
-        require(amount > 0, "O valor do saque deve ser maior que zero");
+        // Check if the value is greater than zero
+        require(amount > 0, "The withdrawal amount must be greater than zero");
         
-        // Verificar se o usuário tem saldo suficiente
+        // Check if the user has sufficient balance
         if (userBalances[msg.sender] < amount) {
-            emit FailedWithdrawal(msg.sender, amount, "Saldo insuficiente");
-            revert("Saldo insuficiente para saque");
+            emit FailedWithdrawal(msg.sender, amount, "Insufficient balance");
+            revert("Insufficient balance for withdrawal");
         }
         
-        // Atualizar saldo do usuário e total do banco
+        // Update user balance and bank total
         userBalances[msg.sender] -= amount;
         totalDeposits -= amount;
         
-        // Transferir fundos para o usuário
+        // Transfer funds to the user
         (bool success, ) = payable(msg.sender).call{value: amount}("");
-        require(success, "Falha na transferencia ETH");
+        require(success, "ETH transfer failed");
         
-        // Emitir evento de saque bem-sucedido
+        // Emit successful withdrawal event
         emit Withdrawal(msg.sender, amount, userBalances[msg.sender]);
     }
     
