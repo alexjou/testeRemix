@@ -6,6 +6,11 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -130,11 +135,11 @@
 	},
 	"sources": {
 		"AulaRecife/3modulo/Desafio/Cofre.sol": {
-			"keccak256": "0x95a2a9d197eb04c521d4272dbd420261e8d83960862b9bb70752f88804a610c0",
+			"keccak256": "0x54b951f99904ffef83ff5eb289c5e9caa3faf57e3afb596bb06250501187ec79",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d7cbd29697ba3ff5cc3bd16603cc72a2e5e30eeeb8fb7a492d7bdb15aa96be73",
-				"dweb:/ipfs/QmPJncdgMQ5eB888GuuSRyrupXQpwtnPg1fwrgqfSmDmfm"
+				"bzz-raw://62883d03ec5c1e84335d3d561dc4a119aec1a426a2d86fe2e5fbc52b7afa39ee",
+				"dweb:/ipfs/QmRgC9Mb4sHKZFUwEdYKuRJNp9zqHFazLH256W2Fbb6ku5"
 			]
 		},
 		"AulaRecife/3modulo/Desafio/InterfaceICofre.sol": {

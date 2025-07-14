@@ -58,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"AulaRecife/3modulo/InterfaceICofre.sol": "ICofre"
+			"AulaRecife/3modulo/Desafio/InterfaceICofre.sol": "ICofre"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -72,7 +72,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"AulaRecife/3modulo/InterfaceICofre.sol": {
+		"AulaRecife/3modulo/Desafio/InterfaceICofre.sol": {
 			"keccak256": "0x07185e5b0e8c1b2a3b4007c33a40c5114a2dd92a4a61baed4cbc4708cb4d65ca",
 			"license": "MIT",
 			"urls": [

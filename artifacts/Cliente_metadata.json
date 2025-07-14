@@ -20,15 +20,9 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "acao",
-						"type": "string"
-					},
-					{
-						"indexed": false,
+						"indexed": true,
 						"internalType": "address",
-						"name": "usuario",
+						"name": "ownerAddr",
 						"type": "address"
 					},
 					{
@@ -38,7 +32,26 @@
 						"type": "uint256"
 					}
 				],
-				"name": "Interacao",
+				"name": "DepositoDoOwner",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "ownerAddr",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "valor",
+						"type": "uint256"
+					}
+				],
+				"name": "SaqueDoOwner",
 				"type": "event"
 			},
 			{
@@ -56,9 +69,35 @@
 			},
 			{
 				"inputs": [],
-				"name": "enviarDeposito",
+				"name": "consultarMeuSaldoNoCofre",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "depositar",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -69,23 +108,14 @@
 						"type": "uint256"
 					}
 				],
-				"name": "requisitarSaque",
+				"name": "sacar",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "verMeuSaldo",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -116,11 +146,11 @@
 	},
 	"sources": {
 		"AulaRecife/3modulo/Desafio/Cliente.sol": {
-			"keccak256": "0xb2a599ca3549b82bf02529bcc296774293bccdf81b5e0a2588f445529305b798",
+			"keccak256": "0x8f20b30b110da1919d629cf9fc9b822a262e14730ffacaff53916c0a78b9a5d3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://74079483fda12538471674b41171689a176f2ba234cba4d96b437c61d48f42f6",
-				"dweb:/ipfs/QmT335CLDkfbKgFqPFtC9NxxZ752S3ZJt976s7rPJQ6si6"
+				"bzz-raw://5bef9af8b49973df8049d20b3b9f59aa4118594864539f634d17ed7ddcf8fc24",
+				"dweb:/ipfs/QmeQYZxbhQFEDP7zPPa6oKmZ2x3ZKzwgXfucbyDt5UAXXD"
 			]
 		},
 		"AulaRecife/3modulo/Desafio/InterfaceICofre.sol": {
